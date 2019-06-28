@@ -26,7 +26,7 @@ class Application
       addition = req.params["item"]
       if @@items.include?(addition)
         @@cart << addition
-        resp.write "Added #{addition}"
+        resp.write "added #{addition}"
       else
         "We don't have that item"
       end
