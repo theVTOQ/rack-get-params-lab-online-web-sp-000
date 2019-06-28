@@ -26,6 +26,7 @@ class Application
       addition = req.params["item"]
       if !@@cart.include?(addition)
         @@cart << addition
+        resp.write "Added #{addition}"
       else
         "Error: item already present in cart."
       end
