@@ -24,11 +24,11 @@ class Application
       end
     elsif req.path.match(/add/)
       addition = req.params["item"]
-      if !@@cart.include?(addition)
+      if @@items.include?(addition)
         @@cart << addition
         resp.write "Added #{addition}"
       else
-        "Error: item already present in cart."
+        "We don't have that item"
       end
     else
       resp.write "Path Not Found"
