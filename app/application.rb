@@ -18,6 +18,8 @@ class Application
       @@cart.each do |item|
         resp.write item
       end
+    elsif req.path.match(/add/)
+      addition = req.params["item"]
     else
       resp.write "Path Not Found"
     end
